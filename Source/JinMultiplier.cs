@@ -10,11 +10,11 @@ using NineSolsAPI.Utils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace ExampleMod;
+namespace JinMultiplier;
 
 [BepInDependency(NineSolsAPICore.PluginGUID)]
 [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
-public class ExampleMod : BaseUnityPlugin {
+public class JinMultiplier : BaseUnityPlugin {
     // https://docs.bepinex.dev/articles/dev_guide/plugin_tutorial/4_configuration.html
     private ConfigEntry<bool> enableSomethingConfig = null!;
     private ConfigEntry<KeyboardShortcut> somethingKeyboardShortcut = null!;
@@ -26,7 +26,7 @@ public class ExampleMod : BaseUnityPlugin {
         RCGLifeCycle.DontDestroyForever(gameObject);
 
         // Load patches from any class annotated with @HarmonyPatch
-        harmony = Harmony.CreateAndPatchAll(typeof(ExampleMod).Assembly);
+        harmony = Harmony.CreateAndPatchAll(typeof(JinMultiplier).Assembly);
 
         enableSomethingConfig = Config.Bind("General.Something", "Enable", true, "Enable the thing");
         somethingKeyboardShortcut = Config.Bind("General.Something",
@@ -65,7 +65,7 @@ public class ExampleMod : BaseUnityPlugin {
         // var assetBundle = AssetBundle.LoadFromMemory(allBytes);
 
         // The bundle is defined in the .csproj as <EmbeddedResource />
-        var assetBundle = AssemblyUtils.GetEmbeddedAssetBundle("ExampleMod.preloads.bundle");
+        var assetBundle = AssemblyUtils.GetEmbeddedAssetBundle("JinMultiplier.preloads.bundle");
         // In a real mod you probably want to load the assetbundle once when you want to use it,
         // and keep the spawned scene in memory if they're not too big.
         // There's a bunch of optimizations you can figure out here.

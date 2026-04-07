@@ -1,6 +1,6 @@
 ﻿using HarmonyLib;
 
-namespace ExampleMod;
+namespace JinMultiplier;
 
 [HarmonyPatch]
 public class Patches {
