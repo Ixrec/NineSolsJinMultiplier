@@ -35,6 +35,9 @@
         <Reference Include="InControl">
             <HintPath>$(DllPath)/InControl.dll</HintPath>
         </Reference>
+        <Reference Include="Unity.TextMeshPro">
+            <HintPath>$(DllPath)/Unity.TextMeshPro.dll</HintPath>
+        </Reference>
     </ItemGroup>
 
     <ItemGroup>
